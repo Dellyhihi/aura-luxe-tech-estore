@@ -30,8 +30,9 @@
   --radius-lg: 18px;
   --radius-full: 9999px;
 
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Grotesk', 'SF Mono', Consolas, monospace;
   
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -58,6 +59,14 @@ html {
   color: var(--text-main);
   color-scheme: dark;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-pure);
+  letter-spacing: -0.02em;
 }
 
 body {
@@ -251,8 +260,9 @@ a:focus:not(:focus-visible) {
 .brand-title {
   font-family: var(--font-display);
   font-size: 1.4rem;
-  letter-spacing: 2px;
-  font-weight: 600;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  text-transform: uppercase;
   color: var(--text-pure);
 }
 
@@ -380,22 +390,23 @@ a:focus:not(:focus-visible) {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-display);
   font-size: 0.8rem;
-  letter-spacing: 2.5px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--gold-primary);
   margin-bottom: 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-  line-height: 1.15;
-  font-weight: 600;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  line-height: 1.12;
+  font-weight: 800;
   color: var(--text-pure);
-  margin-bottom: 18px;
-  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
 }
 
 .hero-desc {
@@ -1046,11 +1057,13 @@ a:focus:not(:focus-visible) {
 }
 
 .card-title {
-  font-size: 1.05rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-pure);
   margin-bottom: 8px;
   line-height: 1.35;
+  letter-spacing: -0.01em;
 }
 
 /* Rating stars on card */
@@ -1121,9 +1134,11 @@ a:focus:not(:focus-visible) {
 
 .card-price {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--gold-light);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
 }
 
 .btn-detail {
@@ -1407,9 +1422,11 @@ a:focus:not(:focus-visible) {
 
 .modal-title {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--text-pure);
-  line-height: 1.2;
+  line-height: 1.25;
   margin-bottom: 8px;
 }
 
@@ -1443,9 +1460,11 @@ a:focus:not(:focus-visible) {
 
 .modal-price {
   font-family: var(--font-display);
-  font-size: 1.9rem;
+  font-size: 2rem;
   color: var(--gold-light);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  font-variant-numeric: tabular-nums;
 }
 
 .modal-warranty {
@@ -1827,7 +1846,9 @@ a:focus:not(:focus-visible) {
 
 .policy-main-title {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: var(--text-pure);
   text-align: center;
   margin-bottom: 36px;
@@ -1860,10 +1881,12 @@ a:focus:not(:focus-visible) {
 }
 
 .policy-card h3 {
-  font-size: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
   color: var(--gold-light);
   margin-bottom: 10px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .policy-card p {
@@ -1903,9 +1926,11 @@ a:focus:not(:focus-visible) {
 
 .footer-title {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--text-pure);
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .footer-desc {
@@ -1949,12 +1974,13 @@ a:focus:not(:focus-visible) {
 }
 
 .footer-col-title {
+  font-family: var(--font-display);
   font-size: 0.88rem;
   color: var(--text-pure);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   margin-bottom: 16px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .footer-links {
@@ -2608,7 +2634,9 @@ a:focus:not(:focus-visible) {
 
 .order-success-title {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: var(--gold-light);
   margin-bottom: 10px;
 }
@@ -2641,7 +2669,7 @@ a:focus:not(:focus-visible) {
 .order-detail-row span:first-child { color: var(--text-dim); }
 
 .order-number {
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-weight: 700;
   color: var(--gold-primary) !important;
   letter-spacing: 1px;
