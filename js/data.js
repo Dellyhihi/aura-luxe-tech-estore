@@ -1,4 +1,5 @@
-// AURA LUXE TECH - Product Data Catalog
+// AURA LUXE TECH - Product Data Catalog v2.0
+// Includes: stock, rating, reviewCount, gallery for enhanced features
 
 window.PRODUCTS = [
   {
@@ -9,8 +10,16 @@ window.PRODUCTS = [
     price: 34990000,
     priceFormatted: '34.990.000₫',
     image: 'images/iphone-16-pro-max.jpg',
+    gallery: [
+      'images/iphone-16-pro-max.jpg',
+      'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=900&auto=format&fit=crop'
+    ],
     badge: 'Flagship',
     badgeType: 'gold',
+    stock: 15,
+    rating: 4.9,
+    reviewCount: 324,
     shortDesc: 'Khung viền Titanium chuẩn hàng không vũ trụ, chip Apple A18 Pro 3nm vượt trội, nút điều khiển Camera Control đột phá.',
     description: 'iPhone 16 Pro Max sở hữu màn hình Super Retina XDR 6.9 inch với viền mỏng nhất từ trước đến nay. Trang bị chip A18 Pro hỗ trợ Apple Intelligence tiên tiến, hệ thống camera Fusion 48MP với khả năng quay video 4K 120fps Dolby Vision điện ảnh.',
     specs: {
@@ -31,8 +40,16 @@ window.PRODUCTS = [
     price: 33990000,
     priceFormatted: '33.990.000₫',
     image: 'images/galaxy-s25-ultra.jpg',
+    gallery: [
+      'images/galaxy-s25-ultra.jpg',
+      'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1585060544812-6b45742d762f?q=80&w=900&auto=format&fit=crop'
+    ],
     badge: 'Mới ra mắt',
     badgeType: 'gold',
+    stock: 8,
+    rating: 4.8,
+    reviewCount: 218,
     shortDesc: 'Thiết kế phẳng tinh xảo, sức mạnh Snapdragon 8 Elite for Galaxy và hệ sinh thái Galaxy AI thế hệ mới.',
     description: 'Galaxy S25 Ultra định nghĩa lại chuẩn mực smartphone cao cấp với khung viền Titanium dát vàng sang trọng, bút S-Pen tích hợp độ trễ 2.8ms, màn hình Dynamic AMOLED 2X sáng 2600 nits chống chói độc quyền Gorilla Armor.',
     specs: {
@@ -53,8 +70,16 @@ window.PRODUCTS = [
     price: 6990000,
     priceFormatted: '6.990.000₫',
     image: 'images/airpods-pro-3.jpg',
+    gallery: [
+      'images/airpods-pro-3.jpg',
+      'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?q=80&w=900&auto=format&fit=crop'
+    ],
     badge: 'Best Seller',
     badgeType: 'silver',
+    stock: 42,
+    rating: 4.7,
+    reviewCount: 567,
     shortDesc: 'Chống ồn chủ động thích ứng thế hệ mới, âm thanh không gian Spatial Audio theo dõi đầu người chính xác.',
     description: 'AirPods Pro Gen 3 tái hiện từng nốt nhạc với độ chi tiết tinh tế, chip H2 độc quyền tối ưu hóa âm trầm sâu lắng và khử tiếng ồn môi trường gấp đôi. Hộp sạc tích hợp loa tìm kiếm Find My chính xác.',
     specs: {
@@ -74,8 +99,16 @@ window.PRODUCTS = [
     price: 9990000,
     priceFormatted: '9.990.000₫',
     image: 'images/galaxy-watch-ultra.jpg',
+    gallery: [
+      'images/galaxy-watch-ultra.jpg',
+      'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=900&auto=format&fit=crop'
+    ],
     badge: 'Đẳng cấp thể thao',
     badgeType: 'silver',
+    stock: 5,
+    rating: 4.5,
+    reviewCount: 89,
     shortDesc: 'Khung vỏ Titanium đệm cushion siêu bền, chuẩn kháng nước 10ATM và GPS băng tần kép chuyên nghiệp.',
     description: 'Chiếc đồng hồ thể thao và mạo hiểm đỉnh cao của Samsung. Màn hình Sapphire chống trầy đạt độ sáng 3000 nits ngoài trời nắng gắt. Pin bền bỉ lên đến 100 giờ ở chế độ tiết kiệm năng lượng cùng còi báo động cứu hộ 86dB.',
     specs: {
@@ -95,8 +128,16 @@ window.PRODUCTS = [
     price: 37990000,
     priceFormatted: '37.990.000₫',
     image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=900&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1561154464-82e9adf32764?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=900&auto=format&fit=crop'
+    ],
     badge: 'Mỏng nhất lịch sử',
     badgeType: 'gold',
+    stock: 12,
+    rating: 4.8,
+    reviewCount: 156,
     shortDesc: 'Độ mỏng kinh ngạc 5.1mm, màn hình Tandem OLED hai lớp đột phá và chip Apple M4 với Neural Engine cực mạnh.',
     description: 'Kiệt tác máy tính bảng mỏng nhất từng được Apple chế tác. Sở hữu màn hình OLED 2 lớp sáng tối đa 1600 nits HDR, tương thích Apple Pencil Pro với phản hồi rung haptic xoay góc bút chân thực.',
     specs: {
@@ -116,8 +157,16 @@ window.PRODUCTS = [
     price: 8490000,
     priceFormatted: '8.490.000₫',
     image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=900&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1484704849700-f032a568e944?q=80&w=900&auto=format&fit=crop'
+    ],
     badge: 'Âm thanh Hi-Res',
     badgeType: 'silver',
+    stock: 20,
+    rating: 4.6,
+    reviewCount: 412,
     shortDesc: 'Hệ thống 8 microphone khử ồn với 2 bộ xử lý Auto NC Optimizer, màng loa 30mm sợi carbon nhẹ tự nhiên.',
     description: 'Chuẩn mực tai nghe over-ear chống ồn hàng đầu thế giới. Thiết kế không khớp nối không gây tiếng rít gió, đệm da mềm ôm trọn vành tai tạo cảm giác êm ái suốt cả ngày làm việc và bay đường dài.',
     specs: {
@@ -137,8 +186,16 @@ window.PRODUCTS = [
     price: 89990000,
     priceFormatted: '89.990.000₫',
     image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=900&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=900&auto=format&fit=crop'
+    ],
     badge: 'Cỗ máy quái vật',
     badgeType: 'gold',
+    stock: 3,
+    rating: 4.9,
+    reviewCount: 198,
     shortDesc: 'Màu sắc Space Black phủ lớp anodized chống bám vân tay, chip M3 Max 16-Core CPU và 40-Core GPU chuyên nghiệp.',
     description: 'Chiếc laptop chuyên nghiệp mạnh nhất dành cho kỹ sư AI, đạo diễn phim và nhà thiết kế kiến trúc 3D. Màn hình Liquid Retina XDR độ sáng 1000 nits toàn màn hình cùng thời lượng pin lên đến 22 tiếng.',
     specs: {
@@ -158,8 +215,16 @@ window.PRODUCTS = [
     price: 7990000,
     priceFormatted: '7.990.000₫',
     image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=900&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=900&auto=format&fit=crop'
+    ],
     badge: 'Âm thanh Đan Mạch',
     badgeType: 'silver',
+    stock: 7,
+    rating: 4.4,
+    reviewCount: 76,
     shortDesc: 'Nhôm thổi cát anodized, dây đeo da bò thật cao cấp, âm thanh True360 tròn đầy phủ khắp không gian.',
     description: 'Chế tác từ nhôm ngọc trai nguyên khối tại Đan Mạch bởi nhà thiết kế huyền thoại Cecilie Manz. Loa di động cao cấp đạt chuẩn chống nước bụi hoàn toàn IP67, tích hợp trợ lý ảo thông minh và 3 micro mảng thu âm.',
     specs: {
@@ -179,13 +244,21 @@ window.PRODUCTS = [
     price: 23990000,
     priceFormatted: '23.990.000₫',
     image: 'https://images.unsplash.com/photo-1551816230-ef5deaed4a26?q=80&w=900&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1551816230-ef5deaed4a26?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1546868871-af0de0ae72be?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?q=80&w=900&auto=format&fit=crop'
+    ],
     badge: 'Siêu bền bỉ',
     badgeType: 'gold',
+    stock: 0,
+    rating: 4.7,
+    reviewCount: 143,
     shortDesc: 'Vỏ Titanium 49mm cứng cáp, nút Action tùy biến cam nổi bật và chip S9 SiP với Neural Engine 4 nhân.',
     description: 'Apple Watch Ultra 2 là chiếc đồng hồ thông minh mạnh mẽ và bền bỉ nhất của Apple. Màn hình LTPO OLED sáng tới 3000 nits, GPS băng tần kép L1+L5 chính xác tuyệt đối, độ sâu lặn WR100 và EN13319, pin 36 giờ sử dụng thông thường.',
     specs: {
       'Kích thước': '49 x 44 x 14.4 mm, 61.4g (không dây đeo)',
-      'Màn hình': '1.93\" LTPO OLED Always-On 3000 nits',
+      'Màn hình': '1.93" LTPO OLED Always-On 3000 nits',
       'Chip xử lý': 'Apple S9 SiP với Neural Engine 4 nhân',
       'Kháng nước': 'WR100, EN 13319, lặn sâu 40m',
       'Cảm biến': 'Nhiệt kế, ECG, SpO2, Phát hiện tai nạn xe'
@@ -200,8 +273,16 @@ window.PRODUCTS = [
     price: 18990000,
     priceFormatted: '18.990.000₫',
     image: 'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=900&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1622297845775-5ff3fef71d13?q=80&w=900&auto=format&fit=crop'
+    ],
     badge: 'Next-Gen Gaming',
     badgeType: 'gold',
+    stock: 2,
+    rating: 4.8,
+    reviewCount: 287,
     shortDesc: 'GPU nâng cấp 67% hiệu năng, Ray Tracing nâng cao và SSD tùy chỉnh 2TB siêu tốc cho trải nghiệm 4K 120fps.',
     description: 'PlayStation 5 Pro mang đến bước nhảy vọt về đồ họa với GPU mạnh hơn 67%, hỗ trợ PSSR (PlayStation Spectral Super Resolution) upscaling AI và Wi-Fi 7 cho streaming game cloud hoàn hảo. Thiết kế thanh mảnh hơn PS5 gốc.',
     specs: {
@@ -221,12 +302,20 @@ window.PRODUCTS = [
     price: 32990000,
     priceFormatted: '32.990.000₫',
     image: 'https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?q=80&w=900&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1561154464-82e9adf32764?q=80&w=900&auto=format&fit=crop'
+    ],
     badge: 'Màn hình khổng lồ',
     badgeType: 'silver',
+    stock: 10,
+    rating: 4.5,
+    reviewCount: 94,
     shortDesc: 'Màn hình Dynamic AMOLED 2X 14.6 inch khổng lồ, chip MediaTek Dimensity 9300+ và S-Pen đi kèm.',
     description: 'Máy tính bảng Android mạnh nhất thế giới với màn hình siêu lớn 14.6 inch tần số quét 120Hz, độ sáng 930 nits. Tích hợp sẵn S-Pen trong thân máy, hỗ trợ Samsung DeX biến tablet thành máy tính để bàn.',
     specs: {
-      'Màn hình': '14.6\" Dynamic AMOLED 2X, 2960 x 1848, 120Hz',
+      'Màn hình': '14.6" Dynamic AMOLED 2X, 2960 x 1848, 120Hz',
       'Vi xử lý': 'MediaTek Dimensity 9300+ for Galaxy',
       'RAM / ROM': '16GB LPDDR5X / 512GB UFS 4.0',
       'Camera': '13MP + 8MP Ultra Wide, Front 12MP + 12MP Ultra Wide',
@@ -242,8 +331,16 @@ window.PRODUCTS = [
     price: 8990000,
     priceFormatted: '8.990.000₫',
     image: 'https://images.unsplash.com/photo-1590658268037-6bf12f032f55?q=80&w=900&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1590658268037-6bf12f032f55?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?q=80&w=900&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?q=80&w=900&auto=format&fit=crop'
+    ],
     badge: 'Immersive Audio',
     badgeType: 'silver',
+    stock: 25,
+    rating: 4.6,
+    reviewCount: 201,
     shortDesc: 'Công nghệ Bose Immersive Audio độc quyền, CustomTune cá nhân hóa âm thanh theo hình dáng tai bạn.',
     description: 'Tai nghe true wireless cao cấp nhất của Bose với công nghệ âm thanh không gian Immersive Audio đột phá. Chống ồn chủ động thế hệ mới với khả năng cách ly tiếng ồn tốt nhất phân khúc, pin 6 giờ sử dụng liên tục.',
     specs: {
@@ -256,3 +353,11 @@ window.PRODUCTS = [
     warranty: 'Bảo hành 12 tháng chính hãng Bose'
   }
 ];
+
+// Coupon codes (for demo)
+window.COUPONS = {
+  'AURA10': { discount: 0.10, label: 'Giảm 10%', minOrder: 10000000 },
+  'LUXE20': { discount: 0.20, label: 'Giảm 20%', minOrder: 30000000 },
+  'WELCOME': { discount: 0.05, label: 'Giảm 5% cho khách mới', minOrder: 0 },
+  'FREESHIP': { discount: 0, label: 'Miễn phí vận chuyển', minOrder: 0 }
+};

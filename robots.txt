@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://aura-luxe-tech-estore.vercel.app/sitemap.xml
+
+# AURA LUXE TECH E-Store
+# Contact: contact@auraluxetech.vn
