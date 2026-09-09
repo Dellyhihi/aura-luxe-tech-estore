@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090b">
+  <title>AURA LUXE TECH — E-Store Thiết Bị Công Nghệ Cao Cấp</title>
+  <meta name="description" content="E-Store trực tuyến các thiết bị điện thoại, máy tính bảng và phụ kiện công nghệ cao cấp chính hãng.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-icon">✦</div>
+      <div class="preloader-text">AURA LUXE TECH</div>
+      <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Ambient Particle Canvas -->
+  <canvas id="particleCanvas" class="particle-canvas"></canvas>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" id="brandLink">
+        <div class="brand-icon">✦</div>
+        <div>
+          <h1 class="brand-title">AURA <span>LUXE</span></h1>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <button type="button" class="wishlist-nav-btn" id="wishlistNavBtn" title="Danh sách yêu thích">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="wishlist-count" id="wishlistCount">0</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button type="button" class="cart-nav-btn" id="cartNavBtn" title="Giỏ hàng">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <div class="catalog-counter" id="liveCounter">
+          <span class="counter-dot"></span>
+          <span>12 Tuyệt tác công nghệ</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Editorial Hero -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content reveal-on-scroll">
+        <div class="hero-pretitle">
+          <span>✦</span> Bộ Sưu Tập Thiết Bị Đẳng Cấp
+        </div>
+        <h2 class="hero-title">Đỉnh Cao Chế Tác &amp; Công Nghệ Tương Lai</h2>
+        <p class="hero-desc">
+          Khám phá danh mục thiết bị di động, âm thanh và phụ kiện công nghệ được tuyển chọn khắt khe từ những thương hiệu hàng đầu thế giới với tiêu chuẩn hoàn thiện titanium và thủ công tinh xảo.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h4>100%</h4>
+            <p>Chính hãng ủy quyền</p>
+          </div>
+          <div class="stat-item">
+            <h4>12-24T</h4>
+            <p>Bảo hành vàng đổi mới</p>
+          </div>
+          <div class="stat-item">
+            <h4>0%</h4>
+            <p>Trả góp đặc quyền</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Product Card -->
+      <div class="hero-featured-card reveal-on-scroll" id="heroFeatured" title="Nhấp để xem chi tiết iPhone 16 Pro Max">
+        <span class="hero-featured-badge">Tiêu Điểm Hôm Nay</span>
+        <img src="images/iphone-16-pro-max.jpg" alt="iPhone 16 Pro Max Desert Titanium" class="hero-featured-img" id="heroImg">
+        <div class="hero-featured-info">
+          <div>
+            <h3 class="hero-featured-name">iPhone 16 Pro Max</h3>
+            <p class="hero-featured-cat">Desert Titanium 256GB</p>
+          </div>
+          <div class="hero-featured-price">34.990.000₫</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Controls Section (Search & Filter) -->
+  <section class="controls-section">
+    <div class="container controls-wrapper">
+      <div class="controls-top">
+        <div class="search-box">
+          <span class="search-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm theo tên sản phẩm, chip, công nghệ..." autocomplete="off">
+          <button type="button" id="clearSearchBtn" class="search-clear" title="Xóa tìm kiếm">✕</button>
+        </div>
+        <div class="sort-group">
+          <label for="sortSelect" class="sort-label">Sắp xếp:</label>
+          <select id="sortSelect" class="sort-select">
+            <option value="featured">Nổi bật nhất</option>
+            <option value="price-asc">Giá: Thấp đến Cao</option>
+            <option value="price-desc">Giá: Cao đến Thấp</option>
+            <option value="name-asc">Tên: A — Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="category-pills" id="categoryPills" role="tablist">
+        <button type="button" class="pill-btn active" data-category="all">Tất cả sản phẩm</button>
+        <button type="button" class="pill-btn" data-category="smartphone">Điện thoại</button>
+        <button type="button" class="pill-btn" data-category="audio">Âm thanh &amp; Tai nghe</button>
+        <button type="button" class="pill-btn" data-category="wearable">Đồng hồ thông minh</button>
+        <button type="button" class="pill-btn" data-category="tablet">Máy tính bảng</button>
+        <button type="button" class="pill-btn" data-category="laptop">Máy tính xách tay</button>
+        <button type="button" class="pill-btn" data-category="gaming">Gaming</button>
+      </div>
+
+      <div class="filter-meta">
+        <span id="resultCount">Đang hiển thị 12 sản phẩm</span>
+        <span id="activeFilterBadge" style="display: none; color: var(--gold-primary);"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Catalog Grid -->
+  <main class="products-section">
+    <div class="container">
+      <div class="products-grid" id="productsGrid">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Product Detail Modal -->
+  <div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container">
+      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Đóng chi tiết">✕</button>
+      <div class="modal-grid">
+        <div class="modal-media">
+          <img src="" alt="" id="modalImg" class="modal-main-img">
+          <span class="modal-badge" id="modalBadge">Chính Hãng Phân Phối</span>
+        </div>
+        <div class="modal-info">
+          <span class="modal-category" id="modalCat">Danh Mục</span>
+          <h2 class="modal-title" id="modalTitle">Tên Sản Phẩm</h2>
+          <div class="modal-price-box">
+            <div class="modal-price" id="modalPrice">0₫</div>
+            <div class="modal-warranty" id="modalWarranty">Bảo hành 12 tháng</div>
+          </div>
+          <p class="modal-desc" id="modalDesc">Mô tả sản phẩm</p>
+          <h4 class="specs-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Thông Số Kỹ Thuật Chính
+          </h4>
+          <table class="specs-table" id="modalSpecsTable"></table>
+
+          <!-- Modal Action Buttons -->
+          <div class="modal-actions">
+            <button type="button" class="btn-primary-action" id="modalAddCartBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              Thêm vào giỏ hàng
+            </button>
+            <button type="button" class="btn-secondary-action" id="modalWishlistBtn" title="Thêm vào yêu thích">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </button>
+            <button type="button" class="btn-secondary-action" id="modalShareBtn" title="Sao chép liên kết">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CART SIDEBAR (Bài 2: E-Store)
+       ============================================================ -->
+  <div class="cart-overlay" id="cartOverlay">
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h3 class="cart-header-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          Giỏ Hàng
+          <span class="cart-header-count" id="cartHeaderCount">(0)</span>
+        </h3>
+        <button type="button" class="cart-close-btn" id="cartCloseBtn">✕</button>
+      </div>
+
+      <div class="cart-body" id="cartBody">
+        <!-- Cart items rendered by JS -->
+        <div class="cart-empty" id="cartEmpty">
+          <div class="cart-empty-icon">🛒</div>
+          <p>Giỏ hàng trống</p>
+          <span>Hãy khám phá và thêm sản phẩm yêu thích!</span>
+        </div>
+      </div>
+
+      <div class="cart-footer" id="cartFooter" style="display: none;">
+        <div class="cart-summary">
+          <div class="cart-summary-row">
+            <span>Tạm tính</span>
+            <span id="cartSubtotal">0₫</span>
+          </div>
+          <div class="cart-summary-row">
+            <span>Phí vận chuyển</span>
+            <span class="free-ship">Miễn phí</span>
+          </div>
+          <div class="cart-summary-row cart-total-row">
+            <span>Tổng cộng</span>
+            <span id="cartTotal" class="cart-total-price">0₫</span>
+          </div>
+        </div>
+        <button type="button" class="btn-checkout" id="btnCheckout">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+            <line x1="1" y1="10" x2="23" y2="10"></line>
+          </svg>
+          Tiến hành thanh toán
+        </button>
+        <button type="button" class="btn-clear-cart" id="btnClearCart">Xóa toàn bộ giỏ hàng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CHECKOUT MODAL (Bài 2: E-Store)
+       ============================================================ -->
+  <div class="modal-overlay" id="checkoutModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container checkout-container">
+      <button type="button" class="modal-close-btn" id="checkoutCloseBtn" aria-label="Đóng thanh toán">✕</button>
+      
+      <div class="checkout-content">
+        <h2 class="checkout-title">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+            <line x1="1" y1="10" x2="23" y2="10"></line>
+          </svg>
+          Thanh Toán Đơn Hàng
+        </h2>
+
+        <div class="checkout-grid">
+          <!-- Customer Form -->
+          <div class="checkout-form-section">
+            <h4 class="checkout-section-title">Thông tin khách hàng</h4>
+            <form id="checkoutForm" novalidate>
+              <div class="form-group">
+                <label for="custName">Họ và tên *</label>
+                <input type="text" id="custName" class="form-input" placeholder="Nguyễn Văn A" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="custPhone">Số điện thoại *</label>
+                  <input type="tel" id="custPhone" class="form-input" placeholder="0901 234 567" required>
+                </div>
+                <div class="form-group">
+                  <label for="custEmail">Email</label>
+                  <input type="email" id="custEmail" class="form-input" placeholder="email@example.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="custAddress">Địa chỉ giao hàng *</label>
+                <textarea id="custAddress" class="form-input form-textarea" placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành phố" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="custNote">Ghi chú đơn hàng</label>
+                <textarea id="custNote" class="form-input form-textarea" placeholder="Ví dụ: Giao hàng giờ hành chính, gọi trước khi giao..."></textarea>
+              </div>
+              <div class="form-group">
+                <label>Phương thức thanh toán</label>
+                <div class="payment-options">
+                  <label class="payment-option">
+                    <input type="radio" name="paymentMethod" value="cod" checked>
+                    <span class="payment-label">
+                      <strong>💵 COD</strong>
+                      <small>Thanh toán khi nhận hàng</small>
+                    </span>
+                  </label>
+                  <label class="payment-option">
+                    <input type="radio" name="paymentMethod" value="bank">
+                    <span class="payment-label">
+                      <strong>🏦 Chuyển khoản</strong>
+                      <small>Chuyển khoản ngân hàng</small>
+                    </span>
+                  </label>
+                  <label class="payment-option">
+                    <input type="radio" name="paymentMethod" value="installment">
+                    <span class="payment-label">
+                      <strong>💳 Trả góp 0%</strong>
+                      <small>Trả góp qua thẻ tín dụng</small>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="checkout-summary-section">
+            <h4 class="checkout-section-title">Tóm tắt đơn hàng</h4>
+            <div class="checkout-items" id="checkoutItems">
+              <!-- Rendered by JS -->
+            </div>
+            <div class="checkout-totals">
+              <div class="checkout-totals-row">
+                <span>Tạm tính</span>
+                <span id="checkoutSubtotal">0₫</span>
+              </div>
+              <div class="checkout-totals-row">
+                <span>Vận chuyển</span>
+                <span class="free-ship">Miễn phí</span>
+              </div>
+              <div class="checkout-totals-row checkout-grand-total">
+                <span>Tổng thanh toán</span>
+                <span id="checkoutTotal">0₫</span>
+              </div>
+            </div>
+            <button type="button" class="btn-place-order" id="btnPlaceOrder">
+              ✦ Đặt Hàng Ngay
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       ORDER SUCCESS MODAL
+       ============================================================ -->
+  <div class="modal-overlay" id="orderSuccessModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container order-success-container">
+      <div class="order-success-content">
+        <div class="order-success-icon">✓</div>
+        <h2 class="order-success-title">Đặt Hàng Thành Công!</h2>
+        <p class="order-success-desc">Cảm ơn quý khách đã tin tưởng AURA LUXE TECH.<br>Đơn hàng của bạn đã được ghi nhận.</p>
+        <div class="order-success-details">
+          <div class="order-detail-row">
+            <span>Mã đơn hàng</span>
+            <span id="orderNumber" class="order-number">—</span>
+          </div>
+          <div class="order-detail-row">
+            <span>Tổng thanh toán</span>
+            <span id="orderTotalDisplay" class="order-total-display">—</span>
+          </div>
+          <div class="order-detail-row">
+            <span>Phương thức</span>
+            <span id="orderPayment">—</span>
+          </div>
+        </div>
+        <p class="order-success-note">Chuyên viên tư vấn sẽ liên hệ xác nhận đơn hàng trong vòng 15 phút.</p>
+        <button type="button" class="btn-primary-action" id="btnContinueShopping">
+          ✦ Tiếp tục mua sắm
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Cuộn lên đầu trang" title="Lên đầu trang">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-colophon">
+        <h4 class="footer-title">AURA LUXE TECH</h4>
+        <p class="footer-desc">E-Store trực tuyến — Công nghệ cao cấp &amp; Thiết bị thông minh.</p>
+      </div>
+      <div class="footer-meta">
+        <p>© 2026 Nhóm Đồ Án. Chế tác phong cách Luxury Dark &amp; Gold.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
