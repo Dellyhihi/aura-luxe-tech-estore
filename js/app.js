@@ -7,11 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // PRELOADER
   // ============================================================
   const preloader = document.getElementById('preloader');
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('aura_theme');
+  if (savedTheme === 'light') document.documentElement.classList.add('light-theme');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isLight = document.documentElement.classList.toggle('light-theme');
+      localStorage.setItem('aura_theme', isLight ? 'light' : 'dark');
+      themeToggle.setAttribute('aria-label', isLight ? 'Chuyển sang giao diện tối' : 'Chuyển sang giao diện sáng');
+    });
+  }
   if (preloader) {
-    setTimeout(() => {
-      preloader.classList.add('hidden');
-      setTimeout(() => initScrollReveal(), 400);
-    }, 2200);
+      setTimeout(() => {
+        preloader.classList.add('hidden');
+        setTimeout(() => initScrollReveal(), 400);
+      }, 900);
   }
 
   // ============================================================
@@ -886,6 +896,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    productsGrid.classList.add('is-changing');
     productsGrid.innerHTML = list.map(item => {
       const miniSpecs = Object.entries(item.specs || {}).slice(0, 2).map(([k, v]) => 
         `<span class="spec-tag">${v}</span>`
@@ -942,7 +953,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
 
     attachCardEvents();
-    requestAnimationFrame(() => revealCards());
+    requestAnimationFrame(() => {
+      productsGrid.classList.remove('is-changing');
+      revealCards();
+    });
   }
 
   // ============================================================
@@ -1032,11 +1046,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalGalleryThumbs.querySelectorAll('.modal-thumb').forEach(thumb => {
       thumb.addEventListener('click', () => {
-        modalImg.src = thumb.dataset.src;
-        modalGalleryThumbs.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
+        selectGalleryImage(thumb.dataset.src);
       });
     });
+
+    let touchStartX = 0;
+    modalImg.onpointermove = (event) => {
+      if (event.pointerType === 'touch') return;
+      const box = modalImg.getBoundingClientRect();
+      modalImg.style.setProperty('--tilt-x', `${((event.clientY - box.top) / box.height - 0.5) * -8}deg`);
+      modalImg.style.setProperty('--tilt-y', `${((event.clientX - box.left) / box.width - 0.5) * 8}deg`);
+    };
+    modalImg.onpointerleave = () => {
+      modalImg.style.setProperty('--tilt-x', '0deg');
+      modalImg.style.setProperty('--tilt-y', '0deg');
+    };
+    modalImg.ontouchstart = (event) => { touchStartX = event.changedTouches[0].clientX; };
+    modalImg.ontouchend = (event) => {
+      const delta = event.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(delta) < 45) return;
+      const thumbs = [...modalGalleryThumbs.querySelectorAll('.modal-thumb')];
+      const activeIndex = Math.max(0, thumbs.findIndex(t => t.classList.contains('active')));
+      const nextIndex = delta < 0 ? Math.min(activeIndex + 1, thumbs.length - 1) : Math.max(activeIndex - 1, 0);
+      if (thumbs[nextIndex]) selectGalleryImage(thumbs[nextIndex].dataset.src);
+    };
+
+    function selectGalleryImage(src) {
+      modalImg.classList.remove('gallery-swap');
+      void modalImg.offsetWidth;
+      modalImg.src = src;
+      modalImg.classList.add('gallery-swap');
+      modalGalleryThumbs.querySelectorAll('.modal-thumb').forEach(t => t.classList.toggle('active', t.dataset.src === src));
+    }
 
     // Wishlist & Compare state
     if (modalWishlistBtn) modalWishlistBtn.classList.toggle('wishlisted', isWishlisted(product.id));
@@ -1326,6 +1367,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     renderProducts();
     injectSchemaJsonLd();
-  }, 2400);
+  }, 1100);
 
 });

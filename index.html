@@ -50,6 +50,8 @@
 
 <body>
 
+  <a class="skip-link" href="#productsSection">Bỏ qua đến danh sách sản phẩm</a>
+
   <!-- Preloader -->
   <div class="preloader" id="preloader">
     <div class="preloader-inner">
@@ -75,6 +77,9 @@
       </a>
 
       <div class="nav-actions">
+        <button type="button" class="theme-toggle" id="themeToggle" title="Đổi giao diện sáng/tối" aria-label="Đổi giao diện sáng/tối">
+          <span aria-hidden="true">☼</span>
+        </button>
         <!-- Compare Button -->
         <button type="button" class="compare-nav-btn" id="compareNavBtn" title="So sánh sản phẩm"
           aria-label="So sánh sản phẩm">
@@ -144,12 +149,16 @@
             <p>Trả góp đặc quyền</p>
           </div>
         </div>
+        <div class="hero-actions">
+          <a class="btn-primary-action hero-cta" href="#productsSection">Khám phá sản phẩm</a>
+          <a class="hero-secondary-cta" href="#policySection">Xem chính sách dịch vụ</a>
+        </div>
       </div>
 
       <!-- Featured Product Card -->
       <div class="hero-featured-card reveal-on-scroll" id="heroFeatured" title="Nhấp để xem chi tiết iPhone 16 Pro Max">
         <span class="hero-featured-badge">Tiêu Điểm Hôm Nay</span>
-        <img src="images/iphone-16-pro-max.jpg" alt="iPhone 16 Pro Max Desert Titanium" class="hero-featured-img"
+        <img src="images/iphone-16-pro-max.jpg" alt="iPhone 16 Pro Max Desert Titanium" class="hero-featured-img" fetchpriority="high"
           id="heroImg">
         <div class="hero-featured-info">
           <div>
@@ -248,14 +257,32 @@
     </div>
   </section>
 
+  <section class="brand-strip" aria-label="Thương hiệu nổi bật">
+    <div class="container brand-strip-inner">
+      <span class="brand-strip-label">Thương hiệu được tin chọn</span>
+      <div class="brand-strip-list" aria-hidden="true">
+        <span>APPLE</span><span>SAMSUNG</span><span>SONY</span><span>BOSE</span><span>GARMIN</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Product Catalog Grid -->
-  <main class="products-section">
+  <main class="products-section" id="productsSection">
     <div class="container">
       <div class="products-grid" id="productsGrid">
         <!-- Rendered dynamically by js/app.js -->
       </div>
     </div>
   </main>
+
+  <section class="trust-strip" aria-label="Cam kết dịch vụ">
+    <div class="container trust-grid">
+      <article class="trust-item"><span class="trust-icon">✓</span><div><strong>Chính hãng 100%</strong><p>Kiểm tra nguồn gốc rõ ràng</p></div></article>
+      <article class="trust-item"><span class="trust-icon">↺</span><div><strong>Đổi trả 30 ngày</strong><p>Hỗ trợ nhanh, thủ tục đơn giản</p></div></article>
+      <article class="trust-item"><span class="trust-icon">⚡</span><div><strong>Giao nhanh toàn quốc</strong><p>Đóng gói an toàn, theo dõi đơn</p></div></article>
+      <article class="trust-item"><span class="trust-icon">♡</span><div><strong>Tư vấn tận tâm</strong><p>Hỗ trợ chọn đúng sản phẩm</p></div></article>
+    </div>
+  </section>
 
   <!-- Product Detail Modal -->
   <div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-hidden="true"
